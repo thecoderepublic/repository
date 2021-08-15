@@ -26,7 +26,6 @@ Abstract class AbstractRepository
         return $this->getModel()->findOrFail($id);
     }
 
-
     public function all($columns = ['*'], $relations = [])
     {
         return $this->getModel()->with($relations)->get($columns);
@@ -78,4 +77,10 @@ Abstract class AbstractRepository
     {
         return $this->findTrashedById($id)->forceDelete();
     }
+
+    public function first()
+    {
+        return $this->getModel()->first();
+    }
+
 }

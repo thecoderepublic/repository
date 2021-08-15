@@ -35,6 +35,13 @@ class RepositoryCommand extends Command
 
         $this->info("Repository pattern implemented for model ". $name);
 
+        if ($this->confirm('Would you like to star this repo?', 'yes')) {
+            if(PHP_OS_FAMILY == 'Darwin') exec('open https://github.com/thecoderepublic/repository');
+            if(PHP_OS_FAMILY == 'Windows') exec('start https://github.com/thecoderepublic/repository');
+            if(PHP_OS_FAMILY == 'Linux') exec('xdg-open https://github.com/thecoderepublic/repository');
+
+            $this->line("Thanks you!");
+        }
     }
 
 
