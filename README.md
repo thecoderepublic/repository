@@ -35,10 +35,11 @@ in order to perform the business logic you want.
 
 `ProductSearchService` can be injected in methods of a controller, command or other service.
 
-`public function doSomeStuff($productSearchService ProductSearchService)
+```php
+public function doSomeStuff($productSearchService ProductSearchService)
 {
     $this->productSearchService = $productSearchService;
     $this->productSearchService->someMethodFromService($par1,$par2)
-}`
+}```
 
 
