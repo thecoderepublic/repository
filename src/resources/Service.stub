@@ -1,0 +1,13 @@
+<?php
+namespace App\Service;
+
+use TheCodeRepublic\Repository\AbstractService;
+
+class {{serviceName}}Service extends AbstractService
+{
+
+    public function __construct()
+    {
+        //code
+    }
+}

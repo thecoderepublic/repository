@@ -1,0 +1,18 @@
+{
+    "name": "thecoderepublic/repository",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Francisc",
+            "email": "franciscboicu@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "TheCodeRepublic\\Repository\\": "src/"
+        }
+    },
+    "require": {}
+}
