@@ -40,6 +40,7 @@ public function doSomeStuff($productSearchService ProductSearchService)
 {
     $this->productSearchService = $productSearchService;
     $this->productSearchService->someMethodFromService($par1,$par2)
-}```
+}
+```
 
 
