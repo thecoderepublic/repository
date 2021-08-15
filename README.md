@@ -9,4 +9,10 @@ A different layer to put the bussiness logic in. Following the pattern:
 request -> controller -> call service -> get data from repository -> apply some logic -> return -> response
 
 #### Installation
-*composer require thecoderepublic/repository*
+`composer require thecoderepublic/repository`
+
+In  `config/app.php` at 'providers' add:
+
+`TheCodeRepublic\Repository\RepositoryServiceProvider::class,`
+
+
