@@ -14,5 +14,12 @@
             "TheCodeRepublic\\Repository\\": "src/"
         }
     },
-    "require": {}
+    "require": {},
+    "extra": {
+	"laravel": {
+	   "providers": [
+		"TheCodeRepublic\\Repository"
+	    ]
+	}
+    }
 }
