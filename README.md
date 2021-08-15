@@ -8,4 +8,5 @@ Without a classical Repository implementation, this is just a new layer class ov
 A different layer to put the bussiness logic in. Following the pattern:
 request -> controller -> call service -> get data from repository -> apply some logic -> return -> response
 
-
+#### Installation
+*composer require thecoderepublic/repository*
