@@ -13,36 +13,36 @@ Abstract class AbstractRepository
 
     public function get()
     {
-        return $this->model->get();
+        return $this->getModel()->get();
     }
 
     public function all()
     {
-        return $this->model->all();
+        return $this->getModel()->all();
     }
 
     public function delete($id)
     {
-        $this->model->destroy($id);
+        return $this->getModel()->destroy($id);
     }
 
-    public function update($id, array $data)
+    public function update(array $data)
     {
-        return $this->model->update($data);
+        return $this->getModel()->update($data);
     }
 
     public function find($id)
     {
-        return $this->model->find($id);
+        return $this->getModel()->find($id);
     }
 
     public function findOrFail($id)
     {
-        return $this->model->findOrFail($id);
+        return $this->getModel()->findOrFail($id);
     }
 
     public function create($data)
     {
-        return $this->model->create($data);
+        return $this->getModel()->create($data);
     }
 }
