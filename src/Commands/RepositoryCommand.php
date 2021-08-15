@@ -40,7 +40,7 @@ class RepositoryCommand extends Command
 
     protected static function getStubs($type)
     {
-        return file_get_contents("packages/thecoderepublic/repository/src/resources/$type.stub");
+        return file_get_contents("vendor/thecoderepublic/repository/src/resources/$type.stub");
     }
 
 
