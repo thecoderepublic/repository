@@ -23,10 +23,10 @@ class RepositoryCommand extends Command
 
         $name = $this->argument('name');
 
-        if ( ! file_exists ( $path = base_path ( 'app/Repository' ) ) )
+        if ( ! file_exists ( $path = base_path ( 'app/Repositories' ) ) )
             mkdir($path, 0777, true);
 
-        if ( file_exists ( base_path ( "app/Repository/{$name}Repository.php" ) ) ) {
+        if ( file_exists ( base_path ( "app/Repositories/{$name}Repository.php" ) ) ) {
             $this->error("Repository with that name ({$name}) already exists");
             exit(0);
         }
@@ -54,7 +54,7 @@ class RepositoryCommand extends Command
     protected static function createRepository($name)
     {
         $template = str_replace( ['{{modelName}}'], [$name], self::GetStubs('Repository') );
-        file_put_contents(base_path("app/Repository/{$name}Repository.php"), $template);
+        file_put_contents(base_path("app/Repositories/{$name}Repository.php"), $template);
     }
 
 

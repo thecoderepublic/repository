@@ -22,10 +22,10 @@ class ServiceCommand extends Command
 
         $name = $this->argument('name');
 
-        if ( ! file_exists ( $path = base_path ( 'app/Service' ) ) )
+        if ( ! file_exists ( $path = base_path ( 'app/Services' ) ) )
             mkdir($path, 0777, true);
 
-        if ( file_exists ( base_path ( "app/Service/{$name}Service.php" ) ) ) {
+        if ( file_exists ( base_path ( "app/Services/{$name}Service.php" ) ) ) {
             $this->error("Service with that name ({$name}) already exists");
             exit(0);
         }
@@ -53,7 +53,7 @@ class ServiceCommand extends Command
     protected static function createService($name)
     {
         $template = str_replace( ['{{serviceName}}'], [$name], self::GetStubs('Service') );
-        file_put_contents(base_path("app/Service/{$name}Service.php"), $template);
+        file_put_contents(base_path("app/Services/{$name}Service.php"), $template);
     }
 
 
