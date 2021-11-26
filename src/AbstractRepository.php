@@ -1,5 +1,5 @@
 <?php
-namespace TheCodeRepublic\Repositories;
+namespace TheCodeRepublic\Repository;
 
 
 Abstract class AbstractRepository
