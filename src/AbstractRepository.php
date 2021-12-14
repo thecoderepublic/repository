@@ -82,7 +82,12 @@ Abstract class AbstractRepository
     {
         return $this->getModel()->first();
     }
-     public function updateOrCreate($id,$data, $by = 'id'){
+    
+    public function findByColumn($column,$value){
+        return $this->getModel()->where($column,$value)->first();
+    }
+    
+    public function updateOrCreate($id,$data, $by = 'id'){
 
        return $this->model->updateOrCreate([
             $by => $id
