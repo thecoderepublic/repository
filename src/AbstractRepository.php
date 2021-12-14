@@ -82,5 +82,12 @@ Abstract class AbstractRepository
     {
         return $this->getModel()->first();
     }
+     public function updateOrCreate($id,$data, $by = 'id'){
+
+       return $this->model->updateOrCreate([
+            $by => $id
+        ],$data);
+     
+    }
 
 }
