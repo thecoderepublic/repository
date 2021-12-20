@@ -3,7 +3,7 @@ namespace TheCodeRepublic\Repository;
 
 
 Abstract class AbstractRepository
-{
+{ 
     protected $model;
 
     public function getModel()
