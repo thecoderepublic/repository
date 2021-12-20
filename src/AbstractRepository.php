@@ -92,7 +92,12 @@ Abstract class AbstractRepository
        return $this->model->updateOrCreate([
             $by => $id
         ],$data);
-     
+    }
+    
+    public function toggle($id,$column){
+       $this->update($id,[
+           $column => !$this->findById($id)->$column
+       ]);
     }
 
 }
