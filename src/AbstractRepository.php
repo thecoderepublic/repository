@@ -41,6 +41,12 @@ Abstract class AbstractRepository
         return $this->getModel()->select($columns)->with($relations)->findOrFail($id)->append($append);
     }
 
+    public function findByColumns($conditions, $columns=['*'], $relations=[])
+    {
+        return $this->getModel()->where($conditions)->select($columns)->with($relations)->first();
+
+    }
+
     public function findTrashedById($id)
     {
         return $this->getModel()->withTrashed()->findOrFail($id);
@@ -96,6 +102,10 @@ Abstract class AbstractRepository
        return $this->model->updateOrCreate([
             $by => $id
         ],$data);
+    }
+
+    public function updateOrCreateByMultipleConditions($conditions,$data){
+        return $this->model->updateOrCreate($conditions,$data);
     }
     
     public function toggle($id,$column){
