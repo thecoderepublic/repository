@@ -74,6 +74,14 @@ Abstract class AbstractRepository
         return $this->findById($id)->delete();
     }
 
+    public function deleteWithRelation($id,$relation){
+        $el = $this->findById($id);
+        $el->$relation()->delete();
+
+        return $el->delete();
+
+   }
+
     public function restoreById($id)
     {
         return $this->findOnlyTrashedById($id)->restore();
