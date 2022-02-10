@@ -122,4 +122,8 @@ Abstract class AbstractRepository
        ]);
     }
 
+    public function findByArray(array $conditions){
+        return $this->getModel()->where($conditions)->first();
+    }
+
 }
