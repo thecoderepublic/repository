@@ -3,6 +3,7 @@
 namespace TheCodeRepublic\Repository;
 
 use Illuminate\Support\ServiceProvider;
+use TheCodeRepublic\Repository\Commands\BothCommand;
 use TheCodeRepublic\Repository\Commands\RepositoryCommand ;
 use TheCodeRepublic\Repository\Commands\ServiceCommand ;
 
@@ -28,6 +29,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->commands([
             RepositoryCommand::class,
             ServiceCommand::class,
+            BothCommand::class,
         ]);
     }
 }
