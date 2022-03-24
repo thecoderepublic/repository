@@ -19,21 +19,28 @@ In  `config/app.php` at 'providers' add:
 
 `php artisan make:repo {modelName}`
 
-This creates a new repo in app/Repository
-Ex: `php artisan make:repo Product` will create `app/Repository/ProductRepository.php`
+This creates a new repo in app/Repositories
+Ex: `php artisan make:repo Product` will create `app/Repositories/ProductRepository.php`
 
 in constructor of `ProductRepository.php` the model will be setup to use
 `App\Models\Product` and `$this->model = $model` `$model` being the instance of Product.
 
 `php artisan make:service {serviceName}`
 
-This creates a new service in app/Service
+This creates a new service in app/Services
 ex: `php artisan make:repo ProductSearch` will create `app/Service/ProductSearchService.php`
+
+`php artisan make:logic {modelName}`
+This creates a new service in app/Services and a new repo in app/Repositories
+Ex: `php artisan make:logic Product` will create `app/Repositories/ProductRepository.php` and `app/Services/ProductService.php`
 
 in the constructor of 'ProductSearchService.php` you can inject all the repositories you need
 in order to perform the business logic you want.
 
 `ProductSearchService` can be injected in methods of a controller, command or other service.
+
+
+
 
 
 ```php
