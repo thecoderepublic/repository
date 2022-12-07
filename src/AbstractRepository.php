@@ -125,5 +125,10 @@ Abstract class AbstractRepository
     public function findByArray(array $conditions){
         return $this->getModel()->where($conditions)->first();
     }
+    
+    public function updateWhere($data, $column, $value, $relations=[])
+    {
+	    return $this->getModel()->with($relations)->where($column, $value)->update($data);
+    }
 
 }
