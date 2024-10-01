@@ -62,7 +62,7 @@ class BothCommand extends Command
 
         $this->info("Interface pattern implemented");
 
-       
+
     }
 
 
@@ -85,7 +85,7 @@ class BothCommand extends Command
     }
     protected static function createInterface($name)
     {
-        $template = str_replace( ['{{modelName}}'], [$name], self::GetStubs('Repository') );
+        $template = str_replace( ['{{modelName}}'], [$name], self::GetStubs('Interface') );
         file_put_contents(base_path("app/Interfaces/{$name}Interface.php"), $template);
     }
 
