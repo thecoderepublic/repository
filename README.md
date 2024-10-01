@@ -8,6 +8,10 @@ Without a classical Repository implementation, this is just a new layer class ov
 A different layer to put the bussiness logic in. Following the pattern:
 request -> controller -> call service -> get data from repository -> apply some logic -> return -> response
 
+#### Added Interfaces for Model
+
+The repository will implement an interface for the model, so you can easily switch the model in the repository.
+
 #### Installation
 `composer require thecoderepublic/repository`
 
@@ -32,7 +36,7 @@ ex: `php artisan make:repo ProductSearch` will create `app/Service/ProductSearch
 
 `php artisan make:logic {modelName}`
 This creates a new service in app/Services and a new repo in app/Repositories
-Ex: `php artisan make:logic Product` will create `app/Repositories/ProductRepository.php` and `app/Services/ProductService.php`
+Ex: `php artisan make:logic Product` will create `app/Repositories/ProductRepository.php` , `app/Services/ProductService.php` and `app/Interface/ProductInterface.php`
 
 in the constructor of 'ProductSearchService.php` you can inject all the repositories you need
 in order to perform the business logic you want.
