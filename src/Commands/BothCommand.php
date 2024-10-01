@@ -20,9 +20,10 @@ class BothCommand extends Command
     public function handle()
     {
 
-        //SERVICE
+
         $name = $this->argument('name');
 
+        //SERVICE
         if ( ! file_exists ( $path = base_path ( 'app/Services' ) ) )
             mkdir($path, 0777, true);
 
@@ -48,6 +49,19 @@ class BothCommand extends Command
 
         $this->info("Repository pattern implemented for model ". $name);
 
+        //Interface
+        if ( ! file_exists ( $path = base_path ( 'app/Interfaces' ) ) )
+            mkdir($path, 0777, true);
+
+        if ( file_exists ( base_path ( "app/Interfaces/{$name}Interface.php" ) ) ) {
+            $this->error("Interface with that name ({$name}) already exists");
+            exit(0);
+        }
+
+        self::createInterface($name);
+
+        $this->info("Interface pattern implemented");
+
        
     }
 
@@ -68,6 +82,11 @@ class BothCommand extends Command
     {
         $template = str_replace( ['{{modelName}}'], [$name], self::GetStubs('Repository') );
         file_put_contents(base_path("app/Repositories/{$name}Repository.php"), $template);
+    }
+    protected static function createInterface($name)
+    {
+        $template = str_replace( ['{{modelName}}'], [$name], self::GetStubs('Repository') );
+        file_put_contents(base_path("app/Repositories/{$name}Interface.php"), $template);
     }
 
 
