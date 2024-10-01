@@ -86,7 +86,7 @@ class BothCommand extends Command
     protected static function createInterface($name)
     {
         $template = str_replace( ['{{modelName}}'], [$name], self::GetStubs('Repository') );
-        file_put_contents(base_path("app/Repositories/{$name}Interface.php"), $template);
+        file_put_contents(base_path("app/Interfaces/{$name}Interface.php"), $template);
     }
 
 
